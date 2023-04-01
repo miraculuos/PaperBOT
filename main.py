@@ -4,7 +4,7 @@ import os, json
 let = lambda x, y: y
 do = lambda *args: tuple(map(lambda x: x, args))[-1]
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 # MUT - ABSTRACTION
 join_dicts = lambda d1, d2: do(
@@ -17,7 +17,7 @@ main = lambda: (
         let(prompt := input('> ').strip().lower(),
             do(print(data_base[prompt])
                , main()) if prompt in data_base.keys() else (
-                let(response := openai.Completion.create(engine="text-davinci-003"
+                let(response := openai.Completion.create(engine="text-babbage-001"
                                                         , prompt=prompt
                                                         , max_tokens=50
                                                         , n=1
